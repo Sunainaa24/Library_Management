@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Book</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/book.css}" href="../static/book.css">
+</head>
+<body>
+<h1>Update Book</h1>
+<form th:action="@{/admin/update}" method="post" th:object="${book}">
+    <input type="hidden" th:field="*{id}" />
+    <p>ID: <span th:text="${book.id}"></span></p>
+    <p>Author: <span th:text="${book.author}"></span></p>
+    <input type="hidden" th:field="*{author}" />
+    <p>Title: <span th:text="${book.title}"></span></p>
+    <input type="hidden" th:field="*{title}" />
+
+    <label for="borrowed">Borrowed:</label>
+    <select  th:field="*{borrowed}">
+        <option value="true">yes</option>
+        <option value="false">No</option>
+    </select>
+    <label for="user">Borrowed By:</label>
+    <select id="user" name="selectedUserId">
+        <option value="">Select a user</option>
+        <option th:each="u : ${users}" th:value="${u.id}" th:text="${u.name}"></option>
+    </select>
+    <button type="submit">Update Book</button>
+</form>
+<div id="footer">
+    <footer>
+        &copy; 2023 Library Management System. All rights reserved.
+    </footer>
+</div>
+</body>
+</html>

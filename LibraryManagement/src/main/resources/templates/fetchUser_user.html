@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/fetchUser.css}" href="../static/fetchUser.css">
+</head>
+<body>
+<h1>User List</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    <tr th:each="user : ${user}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+    </tr>
+</table>
+<div id="footer">
+    <footer>
+        &copy; 2023 Library Management System. All rights reserved.
+    </footer>
+</div>
+</body>
+</html>

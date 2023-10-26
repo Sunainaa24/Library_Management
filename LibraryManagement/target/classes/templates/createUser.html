@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create New User</title>
+    <link th:href="@{/createUser.css}" href="../static/createUser.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>Create New User</h1>
+<form th:action="@{/app/users/user/adduser}" method="post">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" th:required="required">
+        <button type="submit">Create User</button>
+    </div>
+</form>
+<!--<a th:href="@{/app/users/get-user}" class="button">User List</a>-->
+<div id="footer">
+    <footer>
+        &copy; 2023 Library Management System. All rights reserved.
+    </footer>
+</div>
+</body>
+</html>
